@@ -1,4 +1,4 @@
-<h1 align="center">🖥 SEVASTOLINK</h1>
+<h1 align="center">🖥 SEVASTOLINK CRT Dashboard</h1>
 
 <p align="center">
 Web-based server monitoring dashboard inspired by the computer terminals of Sevastopol Station from the <b>Alien: Isolation</b> universe.
