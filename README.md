@@ -401,7 +401,7 @@ The current version contains the complete frontend in a single file, including t
 
 <p align="center">
 <i>
-<img width="800" alt="SEVASTOLINK Dashboard" src="https://github.com/user-attachments/assets/3ca2eba1-af71-4209-9ccf-168e88a20183" />
+<img width="495" height="372" alt="image" src="https://github.com/user-attachments/assets/d1a3aa7a-34ab-4e60-a001-0a5dd36b79cc" />
 </i>
 </p>
 
