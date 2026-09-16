@@ -132,7 +132,7 @@ The current API endpoint is:
 </p>
 
 <pre>
-http://server:8181/api/rainmeter
+http://server:8181/api/monitor
 </pre>
 
 <p>
@@ -263,7 +263,7 @@ The API endpoint and update interval can be configured directly in the JavaScrip
 </p>
 
 <pre>
-const API_URL = "http://server:8181/api/rainmeter";
+const API_URL = "http://server:8181/api/monitor";
 const POLL_MS = 2000;
 </pre>
 
@@ -295,7 +295,7 @@ const POLL_MS = 2000;
                          ▼
               ┌────────────────────┐
               │      HTTP API      │
-              │   /api/rainmeter   │
+              │    /api/monitor    │
               └─────────┬──────────┘
                         │
                         ▼
@@ -312,7 +312,7 @@ const POLL_MS = 2000;
           │             │             │
           └─────────────┼─────────────┘
                         ▼
-                  CRT Dashboard
+              SEVASTOLINK Dashboard
 </pre>
 
 ---
