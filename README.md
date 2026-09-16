@@ -17,7 +17,7 @@ Web-based server monitoring dashboard inspired by the computer terminals of Seva
 <h2>📌 About</h2>
 
 <p>
-<b>SEVASTOLINK</b> is a web-based server monitoring dashboard inspired by the computer terminals and interfaces found throughout <b>Sevastopol Station</b> in the <b>Alien: Isolation</b> universe.
+<b>SEVASTOLINK CRT Dashboard</b> is a web-based server monitoring dashboard inspired by the computer terminals and interfaces found throughout <b>Sevastopol Station</b> in the <b>Alien: Isolation</b> universe.
 </p>
 
 <p>
@@ -37,7 +37,7 @@ Its visual design recreates a classic CRT terminal experience using phosphor-sty
 <h2>📊 Monitoring</h2>
 
 <p>
-SEVASTOLINK continuously displays server resource information received from the monitoring API.
+SEVASTOLINK CRT Dashboard continuously displays server resource information received from the monitoring API.
 </p>
 
 <ul>
@@ -120,7 +120,7 @@ Progress bars automatically change their visual state according to the values re
 <h2>📡 API Communication</h2>
 
 <p>
-SEVASTOLINK communicates with the server through an <b>HTTP API</b> responsible for providing the monitoring data.
+SEVASTOLINK CRT Dashboard communicates with the server through an <b>HTTP API</b> responsible for providing the monitoring data.
 </p>
 
 <p>
@@ -169,7 +169,7 @@ The JavaScript parser processes each line of the response and converts the recei
 <h2>🔌 Connection Status</h2>
 
 <p>
-SEVASTOLINK provides a visual connection indicator that represents the current communication status with the API.
+SEVASTOLINK CRT Dashboard provides a visual connection indicator that represents the current communication status with the API.
 </p>
 
 <ul>
@@ -312,7 +312,7 @@ const POLL_MS = 2000;
           │             │             │
           └─────────────┼─────────────┘
                         ▼
-              SEVASTOLINK Dashboard
+            SEVASTOLINK CRT Dashboard
 </pre>
 
 ---
@@ -408,5 +408,5 @@ The current version contains the complete frontend in a single file, including t
 ---
 
 <p align="center">
-<b>SEVASTOLINK</b> combines real-time server telemetry, HTTP API communication and a retrofuturistic CRT interface inspired by the computer systems of <b>Alien: Isolation</b>. 🖥
+<b>SEVASTOLINK CRT Dashboard</b> combines real-time server telemetry, HTTP API communication and a retrofuturistic CRT interface inspired by the computer systems of <b>Alien: Isolation</b>. 🖥
 </p>
