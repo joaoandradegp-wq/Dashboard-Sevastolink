@@ -33,7 +33,6 @@
     -webkit-font-smoothing:antialiased;
   }
 
-  /* ---------- ambient scanlines / vignette ---------- */
   .crt{
     position:fixed; inset:0; pointer-events:none; z-index:50;
     background:
@@ -65,16 +64,6 @@
     to{ transform:translateY(0%); }
   }
 
-  /* ---------- frame ---------- */
-  /* The panel is authored once at a fixed reference width (--design-w)
-     and then uniformly scaled to fit whatever window/monitor it's
-     shown on (see #fitStage script). The HEIGHT is intentionally not
-     hardcoded — .stage sizes itself to whatever its content actually
-     needs (height:auto), and the script measures that real height at
-     runtime before scaling. That way, any future tweak to padding,
-     margins, or gaps just works — the canvas always fits everything
-     it contains, on any 4:3, 16:9, ultrawide, or portrait screen,
-     instead of silently clipping content at the bottom. */
   .viewport{
     position:fixed; inset:0;
     width:100vw; height:100vh;
@@ -100,7 +89,6 @@
   .bracket.bl{ bottom:16px; left:16px; border-bottom:2px solid; border-left:2px solid; }
   .bracket.br{ bottom:16px; right:16px; border-bottom:2px solid; border-right:2px solid; }
 
-  /* ---------- header ---------- */
   header{
     display:flex; flex-direction:column;
     padding-bottom:0;
@@ -123,12 +111,6 @@
   .wordmark-wrap{
     text-align:center;
     width:100%;
-    /* The source artwork's own canvas (2170x725) has a lot of empty
-       transparent space below the visible "AN LM-LINK PRODUCT" text
-       (roughly the bottom 30%). Rather than cropping the image itself
-       (which shrinks the box and throws off the mask/glow effects
-       tuned for this exact scale), we just pull the next block up
-       with a negative margin to visually close that gap. */
 	margin-top: -40px;  
     margin-bottom: -86px;
   }
@@ -197,7 +179,6 @@
   .status-pill.offline{ color:var(--red); border-color: rgba(255,68,68,.3); }
   @keyframes pulse{ 0%,100%{ opacity:1; } 50%{ opacity:.35; } }
 
-  /* ---------- grid ---------- */
   .panels-wrap{
     width: var(--content-w);
     max-width: 100%;
@@ -270,7 +251,6 @@
     50%, 100%{ width:100%; }
   }
 
-  /* ---------- footer log ---------- */
   footer{
     border-top:1px solid var(--green-faint);
     padding-top:10px; margin-top:6px;
@@ -281,10 +261,6 @@
     font-size:12px; letter-spacing:1.5px; color:var(--green-dim);
   }
 
-  /* No breakpoint media queries needed: the whole .stage canvas is
-     scaled uniformly to fit any viewport (see #fitStage script), so
-     the same composition looks right on phones, 4:3 monitors and
-     ultrawide screens alike. */
 </style>
 </head>
 <body>
@@ -356,23 +332,6 @@
   </div>
 
 <script>
-  // ---------------------------------------------------------
-  // Scale-to-fit: the panel is designed once at a fixed reference
-  // width (DESIGN_W) and this scales the whole canvas up/down to
-  // fill whatever window it's shown in, centered, letterboxed with
-  // the same background color. This is what makes the layout look
-  // identical (same gaps, same proportions) at 4:3, 16:9, ultrawide,
-  // portrait, etc.
-  //
-  // The canvas HEIGHT is measured live from the actual content
-  // (stage.offsetHeight) instead of being hardcoded. CSS `transform`
-  // never affects offsetHeight — it only visually scales/moves the
-  // element — so this always reflects the true, un-scaled height of
-  // everything inside .stage, no matter how the spacing/margins are
-  // tweaked later. That's what stops elements at the bottom (the
-  // blink bar, "(C) LM-LINK DATA SYSTEMS", the log ticker) from
-  // silently getting clipped off by .viewport's overflow:hidden.
-  // ---------------------------------------------------------
   (function(){
     const stage = document.getElementById('stage');
     const DESIGN_W = 1024;
@@ -386,9 +345,6 @@
   })();
 </script>
 <script>
-  // ---------------------------------------------------------
-  // CONFIG — aponte para a mesma API que o update_api.ps1 usava
-  // ---------------------------------------------------------
   const API_URL = "http://server:8181/api/rainmeter";
   const POLL_MS = 2000;
 
