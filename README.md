@@ -7,7 +7,7 @@ Web-based server monitoring dashboard inspired by the computer terminals of <b>S
 <p align="center">
   <img src="https://img.shields.io/badge/Status-In%20Development-brightgreen">
   <img src="https://img.shields.io/badge/Version-1.0-blue">
-  <img src="https://img.shields.io/badge/Language-HTML%20%7C%20CSS%20%7C%20JavaScript-orange">
+  <img src="https://img.shields.io/badge/Language-HTML%20%7C%20CSS%20%7C%20JavaScript%20%7C%20AutoHotkey-orange">
   <img src="https://img.shields.io/badge/Integration-HTTP%20API-lightgrey">
   <img src="https://img.shields.io/badge/Interface-CRT%20%7C%20Retro-green">
 </p>
@@ -107,7 +107,7 @@ The dashboard performs a new synchronization every <b>2 seconds</b>.
 </p>
 
 <p>
-The JavaScript parser processes the response and updates the corresponding dashboard components.
+The API returns server telemetry as plain text using <b>KEY=VALUE</b> pairs. The JavaScript parser processes the response and updates the corresponding dashboard components.
 </p>
 
 ---
@@ -163,6 +163,27 @@ The dashboard requires no frontend framework or additional web server.
 
 ---
 
+<h2>🖥 Quick Launch</h2>
+
+<p>
+The <b>web.bat</b> file provides a quick way to launch the dashboard directly in Microsoft Edge using Kiosk Mode.
+</p>
+
+<pre>
+@echo off
+start "" "C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe" --app="http://server:8181/monitor" --kiosk
+</pre>
+
+<p>
+Double-clicking the batch file opens the SEVASTOLINK dashboard without the standard browser interface.
+</p>
+
+<p>
+The URL can be changed directly in the <b>web.bat</b> file when necessary.
+</p>
+
+---
+
 <h2>🖥 Windows Screen Saver</h2>
 
 <p>
@@ -170,7 +191,11 @@ The SEVASTOLINK dashboard can also be used as a Windows screen saver.
 </p>
 
 <p>
-The <b>SEVASTOLINK Screen Saver</b> launches the dashboard in fullscreen using <b>Microsoft Edge Kiosk Mode</b>.
+The <b>SEVASTOLINK Screen Saver</b> uses <b>AutoHotkey v2</b> to launch the dashboard in fullscreen Kiosk Mode and monitor keyboard and mouse activity.
+</p>
+
+<p>
+When user interaction is detected, the Edge Kiosk process is closed and the screen saver exits.
 </p>
 
 <p>
@@ -181,16 +206,12 @@ The screen saver is available in the <b>ScreenSaver</b> folder:
 <a href="./Screensaver/"><b>🖥 Open SEVASTOLINK Screen Saver</b></a>
 </p>
 
-<p>
-It uses <b>AutoHotkey v2</b> and only requires the URL of the server hosting the dashboard.
-</p>
-
 ---
 
 <h2>⚙️ Configuration</h2>
 
 <p>
-The API endpoint and synchronization interval can be configured directly in <b>index.html</b>.
+The dashboard URL and synchronization interval can be configured directly in <b>index.html</b>.
 </p>
 
 <pre>
@@ -199,11 +220,7 @@ const POLL_MS = 2000;
 </pre>
 
 <p>
-<b>API_URL</b> defines the monitoring API endpoint.
-</p>
-
-<p>
-<b>POLL_MS</b> defines the synchronization interval in milliseconds.
+The URL used by the <b>web.bat</b> and <b>Sevastolink.ahk</b> files should point to the same SEVASTOLINK dashboard address.
 </p>
 
 ---
@@ -217,6 +234,7 @@ const POLL_MS = 2000;
   <li>Fetch API</li>
   <li>HTTP API</li>
   <li>CSS Transforms</li>
+  <li>Batch Script</li>
   <li>AutoHotkey v2</li>
   <li>Microsoft Edge Kiosk Mode</li>
 </ul>
