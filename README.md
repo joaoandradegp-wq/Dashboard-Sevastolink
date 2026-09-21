@@ -199,11 +199,7 @@ When user interaction is detected, the Edge Kiosk process is closed and the scre
 </p>
 
 <p>
-The screen saver is available in the <b>ScreenSaver</b> folder:
-</p>
-
-<p>
-<a href="./Screensaver/"><b>🖥 Open SEVASTOLINK Screen Saver</b></a>
+The screen saver is available in the <b>ScreenSaver</b> folder: <a href="./Screensaver/"><b>🖥 SEVASTOLINK Screen Saver</b></a>
 </p>
 
 ---
