@@ -1,4 +1,4 @@
-<h1 align="center"><img width="500" alt="imagem_2026-09-22_192359571" src="https://github.com/user-attachments/assets/d07dd2f1-dcd3-4bc4-8678-649c6921f22c" />
+<h1 align="center"><img width="400" alt="imagem_2026-09-22_192359571" src="https://github.com/user-attachments/assets/d07dd2f1-dcd3-4bc4-8678-649c6921f22c" />
 </h1>
 
 <p align="center">
