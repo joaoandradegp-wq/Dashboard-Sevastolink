@@ -120,9 +120,9 @@ The dashboard provides a visual indicator for the current API connection state.
 </p>
 
 <ul>
-  <li>🟡 <b>SYNCING</b> — Initializing or attempting synchronization</li>
-  <li>🟢 <b>ONLINE</b> — API responding successfully</li>
-  <li>🔴 <b>LINK LOST</b> — Communication failure</li>
+  <li>🟡 <b>SYNCING</b> - Initializing or attempting synchronization</li>
+  <li>🟢 <b>ONLINE</b> - API responding successfully</li>
+  <li>🔴 <b>LINK LOST</b> - Communication failure</li>
 </ul>
 
 <p>
