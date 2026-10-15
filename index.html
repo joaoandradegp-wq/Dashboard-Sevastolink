@@ -33,6 +33,7 @@
     -webkit-font-smoothing:antialiased;
   }
 
+  /* ---------- ambient scanlines / vignette ---------- */
   .crt{
     position:fixed; inset:0; pointer-events:none; z-index:50;
     background:
@@ -64,6 +65,16 @@
     to{ transform:translateY(0%); }
   }
 
+  /* ---------- frame ---------- */
+  /* The panel is authored once at a fixed reference width (--design-w)
+     and then uniformly scaled to fit whatever window/monitor it's
+     shown on (see #fitStage script). The HEIGHT is intentionally not
+     hardcoded — .stage sizes itself to whatever its content actually
+     needs (height:auto), and the script measures that real height at
+     runtime before scaling. That way, any future tweak to padding,
+     margins, or gaps just works — the canvas always fits everything
+     it contains, on any 4:3, 16:9, ultrawide, or portrait screen,
+     instead of silently clipping content at the bottom. */
   .viewport{
     position:fixed; inset:0;
     width:100vw; height:100vh;
@@ -89,6 +100,7 @@
   .bracket.bl{ bottom:16px; left:16px; border-bottom:2px solid; border-left:2px solid; }
   .bracket.br{ bottom:16px; right:16px; border-bottom:2px solid; border-right:2px solid; }
 
+  /* ---------- header ---------- */
   header{
     display:flex; flex-direction:column;
     padding-bottom:0;
@@ -111,6 +123,12 @@
   .wordmark-wrap{
     text-align:center;
     width:100%;
+    /* The source artwork's own canvas (2170x725) has a lot of empty
+       transparent space below the visible "AN LM-LINK PRODUCT" text
+       (roughly the bottom 30%). Rather than cropping the image itself
+       (which shrinks the box and throws off the mask/glow effects
+       tuned for this exact scale), we just pull the next block up
+       with a negative margin to visually close that gap. */
 	margin-top: -40px;  
     margin-bottom: -86px;
   }
@@ -179,6 +197,7 @@
   .status-pill.offline{ color:var(--red); border-color: rgba(255,68,68,.3); }
   @keyframes pulse{ 0%,100%{ opacity:1; } 50%{ opacity:.35; } }
 
+  /* ---------- grid ---------- */
   .panels-wrap{
     width: var(--content-w);
     max-width: 100%;
@@ -251,6 +270,49 @@
     50%, 100%{ width:100%; }
   }
 
+  /* ---------- estado SYNCING / OFFLINE ----------
+     Enquanto o painel estiver sem dados (SYNCING ou LINK LOST):
+     - a barra piscante congela na posicao em que estava
+     - TODO o tema verde (e amarelo) vira vermelho, mantendo as mesmas
+       larguras/proporcoes das barras, textos, brilhos, bordas, cantos,
+       scanlines e o logo. */
+  body.offline{
+    --green: #ff4444;
+    --green-dim: #b34a4a;
+    --green-faint: rgba(255,68,68,.14);
+    --green-glow: rgba(255,68,68,.4);
+    --logo-glow: rgba(110,0,0,.6);
+    --amber: #ff4444;
+  }
+  body.offline .blink-bar-fill{
+    animation-play-state: paused;
+    box-shadow: 0 0 10px rgba(255,68,68,.5), 0 0 24px rgba(255,68,68,.25);
+  }
+  body.offline .blink-bar{ background: rgba(255,68,68,.06); }
+  body.offline .bar-fill,
+  body.offline .bar-fill.warn,
+  body.offline .bar-fill.crit{ box-shadow: 0 0 8px rgba(255,68,68,.5); }
+  body.offline .value,
+  body.offline .value.warn,
+  body.offline .value.crit,
+  body.offline #tempVal{ text-shadow: 0 0 10px rgba(255,68,68,.4) !important; }
+  body.offline .crt{
+    background:
+      radial-gradient(ellipse at center, rgba(0,0,0,0) 55%, rgba(0,0,0,.55) 100%),
+      repeating-linear-gradient(to bottom,
+        rgba(0,0,0,0) 0px, rgba(0,0,0,0) 2px,
+        rgba(255,68,68,.025) 3px, rgba(0,0,0,0) 4px);
+  }
+  body.offline .noise-drift{
+    background: linear-gradient(transparent 0%, rgba(255,68,68,.03) 50%, transparent 100%);
+  }
+  /* logo (imagem verde): o canal verde vira o vermelho do painel (#ff4444),
+     mantendo a intensidade original (ver <filter id="logoRed"> no body) */
+  body.offline .wordmark{
+    filter: url(#logoRed) drop-shadow(0 0 5px var(--logo-glow)) drop-shadow(0 0 12px rgba(60,0,0,.35));
+  }
+
+  /* ---------- footer log ---------- */
   footer{
     border-top:1px solid var(--green-faint);
     padding-top:10px; margin-top:6px;
@@ -261,9 +323,24 @@
     font-size:12px; letter-spacing:1.5px; color:var(--green-dim);
   }
 
+  /* No breakpoint media queries needed: the whole .stage canvas is
+     scaled uniformly to fit any viewport (see #fitStage script), so
+     the same composition looks right on phones, 4:3 monitors and
+     ultrawide screens alike. */
 </style>
 </head>
-<body>
+<body class="offline">
+
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <filter id="logoRed" color-interpolation-filters="sRGB">
+      <!-- R' = G ; G' = B' = 0.27*G  ->  verde (0,255,133) vira vermelho (255,68,68) -->
+      <feColorMatrix type="matrix" values="
+        0 1    0 0 0
+        0 0.27 0 0 0
+        0 0.27 0 0 0
+        0 0    0 1 0"/>
+    </filter>
+  </svg>
 
   <div class="crt"></div>
   <div class="noise-drift"></div>
@@ -332,6 +409,23 @@
   </div>
 
 <script>
+  // ---------------------------------------------------------
+  // Scale-to-fit: the panel is designed once at a fixed reference
+  // width (DESIGN_W) and this scales the whole canvas up/down to
+  // fill whatever window it's shown in, centered, letterboxed with
+  // the same background color. This is what makes the layout look
+  // identical (same gaps, same proportions) at 4:3, 16:9, ultrawide,
+  // portrait, etc.
+  //
+  // The canvas HEIGHT is measured live from the actual content
+  // (stage.offsetHeight) instead of being hardcoded. CSS `transform`
+  // never affects offsetHeight — it only visually scales/moves the
+  // element — so this always reflects the true, un-scaled height of
+  // everything inside .stage, no matter how the spacing/margins are
+  // tweaked later. That's what stops elements at the bottom (the
+  // blink bar, "(C) LM-LINK DATA SYSTEMS", the log ticker) from
+  // silently getting clipped off by .viewport's overflow:hidden.
+  // ---------------------------------------------------------
   (function(){
     const stage = document.getElementById('stage');
     const DESIGN_W = 1024;
@@ -345,7 +439,10 @@
   })();
 </script>
 <script>
-  const API_URL = "http://server:8181/api/rainmeter";
+  // ---------------------------------------------------------
+  // CONFIG — aponte para a mesma API que o update_api.ps1 usava
+  // ---------------------------------------------------------
+  const API_URL = "http://server.yakalo-trout.ts.net:8181/api/rainmeter";
   const POLL_MS = 2000;
 
   const el = id => document.getElementById(id);
@@ -430,10 +527,12 @@
       el('ulVal').textContent = (d.UPLOAD ?? '--') + ' MB/s';
 
       pill.classList.remove('offline');
+      document.body.classList.remove('offline');
       statusText.textContent = 'ONLINE';
       pushLog('TELEMETRY SYNC OK');
     }catch(err){
       pill.classList.add('offline');
+      document.body.classList.add('offline');
       statusText.textContent = 'LINK LOST';
       pushLog('SYNC FAILED — ' + err.message);
     }
