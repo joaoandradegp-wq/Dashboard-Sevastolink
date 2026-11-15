@@ -9,6 +9,7 @@ Live wallpaper for <b>Wallpaper Engine</b> that shows the <b>SEVASTOLINK CRT Das
   <img src="https://img.shields.io/badge/Platform-Windows-blue">
   <img src="https://img.shields.io/badge/Wallpaper%20Engine-Web-orange">
   <img src="https://img.shields.io/badge/Stack-HTML%20%2F%20CSS%20%2F%20JS-red">
+  <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3840473555"><img src="https://img.shields.io/badge/Steam-Workshop-1b2838?logo=steam"></a>
 </p>
 
 ---
@@ -25,6 +26,18 @@ The wallpaper is a single HTML page that polls the SEVASTOLINK API and displays 
 
 <p>
 The API URL and the refresh interval can be changed directly in the <b>Wallpaper Engine</b> properties panel, with no need to edit any code.
+</p>
+
+---
+
+<h2>🔗 Steam Workshop</h2>
+
+<p>
+This wallpaper is also available on the Steam Workshop:
+</p>
+
+<p>
+<a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3840473555">https://steamcommunity.com/sharedfiles/filedetails/?id=3840473555</a>
 </p>
 
 ---
