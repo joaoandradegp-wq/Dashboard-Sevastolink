@@ -132,6 +132,90 @@ The API must allow CORS when the page is opened from a local file.
 
 ---
 
+<h2>🔧 Changes from the Original HTML</h2>
+
+<p>
+The original dashboard had the API URL and the refresh interval fixed in the code. To make them configurable from the Wallpaper Engine panel, the script needed a few changes.
+</p>
+
+<h3>1. Settings changed from const to let</h3>
+
+<p>
+A <b>const</b> value cannot be changed after it is declared. Since Wallpaper Engine sends new values at runtime, both settings became <b>let</b>, and a timer variable was added:
+</p>
+
+<pre>
+// Before
+let API_URL = "http://server:8181/api/rainmeter";
+const POLL_MS = 2000;
+
+// After
+let API_URL = "http://server:8181/api/rainmeter";
+let POLL_MS = 2000;
+let pollTimer = null;
+</pre>
+
+<h3>2. New function to restart the polling</h3>
+
+<p>
+An interval created with <b>setInterval</b> does not change speed by itself. When the refresh interval changes, the old timer is cleared and a new one is created:
+</p>
+
+<pre>
+function reiniciarPolling(){
+  if (pollTimer) clearInterval(pollTimer);
+  pollTimer = setInterval(poll, POLL_MS);
+}
+</pre>
+
+<h3>3. Wallpaper Engine property listener</h3>
+
+<p>
+Wallpaper Engine calls <b>applyUserProperties</b> when the wallpaper loads and every time a property is edited in the panel. The names <b>apiurl</b> and <b>pollms</b> must match the ones in <b>project.json</b>:
+</p>
+
+<pre>
+window.wallpaperPropertyListener = {
+  applyUserProperties: function(props){
+    if (props.apiurl){
+      API_URL = props.apiurl.value.trim();
+    }
+    if (props.pollms){
+      POLL_MS = props.pollms.value;
+      reiniciarPolling();
+    }
+  }
+};
+</pre>
+
+<h3>4. Start of the polling</h3>
+
+<p>
+The original last lines were replaced, so the page still works when opened directly in a browser (where the listener is never called):
+</p>
+
+<pre>
+// Before
+poll();
+setInterval(poll, POLL_MS);
+
+// After
+poll();
+reiniciarPolling();
+</pre>
+
+<h3>5. Properties in project.json</h3>
+
+<p>
+The <b>general.properties</b> block was added to <b>project.json</b> with the <b>apiurl</b> (text input) and <b>pollms</b> (slider) options, as shown in the Configuration section.
+</p>
+
+<p>
+Nothing else in the dashboard (layout, metrics, colors, log) was changed.
+</p>
+
+---
+
 <h2>🌐 Requirements</h2>
 
 <ul>
