@@ -8,7 +8,7 @@ Live wallpaper for <b>Wallpaper Engine</b> that shows the <b>SEVASTOLINK CRT Das
   <img src="https://img.shields.io/badge/Status-Ready-brightgreen">
   <img src="https://img.shields.io/badge/Platform-Windows-blue">
   <img src="https://img.shields.io/badge/Wallpaper%20Engine-Web-orange">
-  <img src="https://img.shields.io/badge/HTML-CSS-JavaScript-lightgrey">
+  <img src="https://img.shields.io/badge/Stack-HTML%20%2F%20CSS%20%2F%20JS-lightgrey">
 </p>
 
 ---
