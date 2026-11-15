@@ -206,7 +206,7 @@ The dashboard requires no frontend framework or additional web server.
 <h2>🖥 Quick Launch</h2>
 
 <p>
-The <b>web.bat</b> file provides a quick way to launch the dashboard directly in Microsoft Edge using Kiosk Mode.
+The <b>Kiosk_Mode.bat</b> file provides a quick way to launch the dashboard directly in Microsoft Edge using Kiosk Mode.
 </p>
 
 <pre>
@@ -219,7 +219,7 @@ Double-clicking the batch file opens the SEVASTOLINK dashboard without the stand
 </p>
 
 <p>
-The URL can be changed directly in the <b>web.bat</b> file when necessary.
+The URL can be changed directly in the <b>Kiosk_Mode.bat</b> file when necessary.
 </p>
 
 ---
@@ -236,7 +236,7 @@ const POLL_MS = 2000;
 </pre>
 
 <p>
-The URL used by the <b>web.bat</b> and <b>Sevastolink.ahk</b> files should point to the same SEVASTOLINK dashboard address.
+The URL used by the <b>Kiosk_Mode.bat</b> and <b>Sevastolink.ahk</b> files should point to the same SEVASTOLINK dashboard address.
 </p>
 
 ---
