@@ -32,6 +32,44 @@ The interface was built using <b>HTML, CSS and JavaScript</b>, without requiring
 
 ---
 
+<h2>🧩 Adaptations</h2>
+
+<p>
+Besides running in a browser, SEVASTOLINK has two ready-to-use adaptations for <b>Windows</b>. <br>Pick the one that fits your setup:
+</p>
+
+<table align="center">
+  <tr>
+    <td align="center" width="50%" valign="top">
+      <br>
+      <img src="https://cdn.simpleicons.org/autohotkey/8b949e" height="48">
+      <h3>Screen Saver</h3>
+      <p>
+        Turns the dashboard into a <b>Windows screen saver</b>.<br>
+        Opens in fullscreen <b>Edge Kiosk Mode</b> and closes with any mouse or keyboard activity.
+      </p>
+      <a href="https://github.com/joaoandradegp-wq/Dashboard-Sevastolink/tree/Wallpaper_Engine/ScreenSaver">
+        <img src="https://img.shields.io/badge/Open-Screen%20Saver-1f6feb?style=for-the-badge">
+      </a>
+      <br><br>
+    </td>
+    <td align="center" width="50%" valign="top">
+      <br>
+      <img src="https://cdn.simpleicons.org/steam/8b949e" height="48">
+      <h3>Wallpaper Engine</h3>
+      <p>
+        Turns the dashboard into an <b>animated desktop wallpaper</b>.<br>
+        API URL and refresh interval can be changed in the Wallpaper Engine panel, with no code editing.
+      </p>
+      <a href="https://github.com/joaoandradegp-wq/Dashboard-Sevastolink/tree/Wallpaper_Engine/WallpaperEngine">
+        <img src="https://img.shields.io/badge/Open-Wallpaper%20Engine-1f6feb?style=for-the-badge">
+      </a>
+    </td>
+  </tr>
+</table>
+
+---
+
 <h2>📊 Monitoring</h2>
 
 <p>
@@ -182,26 +220,6 @@ Double-clicking the batch file opens the SEVASTOLINK dashboard without the stand
 
 <p>
 The URL can be changed directly in the <b>web.bat</b> file when necessary.
-</p>
-
----
-
-<h2>🖥 Windows Screen Saver</h2>
-
-<p>
-The SEVASTOLINK dashboard can also be used as a Windows screen saver.
-</p>
-
-<p>
-The <b>SEVASTOLINK Screen Saver</b> uses <b>AutoHotkey v2</b> to launch the dashboard in fullscreen Kiosk Mode and monitor keyboard and mouse activity.
-</p>
-
-<p>
-When user interaction is detected, the Edge Kiosk process is closed and the screen saver exits.
-</p>
-
-<p>
-The screen saver is available in the <b>ScreenSaver</b> folder: <a href="./ScreenSaver/"><b>SEVASTOLINK Screen Saver</b></a>
 </p>
 
 ---
