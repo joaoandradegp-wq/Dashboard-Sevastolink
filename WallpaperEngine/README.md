@@ -1,4 +1,8 @@
-<h1 align="center">🖥 SEVASTOLINK Wallpaper</h1>
+<h1 align="center">
+🖥 SEVASTOLINK Wallpaper
+<br>
+<sub>A Real Server Dashboard</sub>
+</h1>
 
 <p align="center">
 Live wallpaper for <b>Wallpaper Engine</b> that shows the <b>SEVASTOLINK CRT Dashboard</b> with real-time server telemetry.
@@ -30,7 +34,7 @@ The API URL and the refresh interval can be changed directly in the <b>Wallpaper
 
 ---
 
-<h2>🔗 Steam Workshop</h2>
+<h2><img src="https://cdn.simpleicons.org/steam/c9d1d9" height="26" align="absmiddle">&nbsp;&nbsp;Steam Workshop</h2>
 
 <p>
 This wallpaper is also available on the Steam Workshop:
