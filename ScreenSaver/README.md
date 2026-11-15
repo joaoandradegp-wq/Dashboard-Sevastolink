@@ -8,7 +8,7 @@ Windows screen saver that opens the <b>SEVASTOLINK CRT Dashboard</b> in Microsof
   <img src="https://img.shields.io/badge/Status-Ready-brightgreen">
   <img src="https://img.shields.io/badge/Platform-Windows-blue">
   <img src="https://img.shields.io/badge/AutoHotkey-v2-orange">
-  <img src="https://img.shields.io/badge/Browser-Microsoft%20Edge-lightgrey">
+  <img src="https://img.shields.io/badge/Browser-Microsoft%20Edge-blue">
 </p>
 
 ---
