@@ -48,7 +48,7 @@ Besides running in a browser, SEVASTOLINK has two ready-to-use adaptations for <
         Turns the dashboard into a <b>Windows screen saver</b>.<br>
         Opens in fullscreen <b>Edge Kiosk Mode</b> and closes with any mouse or keyboard activity.
       </p>
-      <a href="https://github.com/joaoandradegp-wq/Dashboard-Sevastolink/tree/Wallpaper_Engine/ScreenSaver">
+      <a href="https://github.com/joaoandradegp-wq/Dashboard-Sevastolink/tree/main/ScreenSaver">
         <img src="https://img.shields.io/badge/Open-Screen%20Saver-1f6feb?style=for-the-badge">
       </a>
       <br><br>
@@ -61,7 +61,7 @@ Besides running in a browser, SEVASTOLINK has two ready-to-use adaptations for <
         Turns the dashboard into an <b>animated desktop wallpaper</b>.<br>
         API URL and refresh interval can be changed in the Wallpaper Engine panel, with no code editing.
       </p>
-      <a href="https://github.com/joaoandradegp-wq/Dashboard-Sevastolink/tree/Wallpaper_Engine/WallpaperEngine">
+      <a href="https://github.com/joaoandradegp-wq/Dashboard-Sevastolink/tree/main/WallpaperEngine">
         <img src="https://img.shields.io/badge/Open-Wallpaper%20Engine-1f6feb?style=for-the-badge">
       </a>
     </td>
