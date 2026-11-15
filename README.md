@@ -10,7 +10,7 @@ Web-based server monitoring dashboard inspired by the computer terminals of <b>S
   <img src="https://img.shields.io/badge/Status-In%20Development-brightgreen">
   <img src="https://img.shields.io/badge/Version-1.0-blue">
   <img src="https://img.shields.io/badge/Language-HTML%20%7C%20CSS%20%7C%20JavaScript%20%7C%20AutoHotkey-orange">
-  <img src="https://img.shields.io/badge/Integration-HTTP%20API-lightgrey">
+  <img src="https://img.shields.io/badge/Integration-HTTP%20API-red">
   <img src="https://img.shields.io/badge/Interface-CRT%20%7C%20Retro-green">
 </p>
 
