@@ -10,7 +10,7 @@ Web-based server monitoring dashboard inspired by the computer terminals of <b>S
   <img src="https://img.shields.io/badge/Status-In%20Development-brightgreen">
   <img src="https://img.shields.io/badge/Version-1.0-blue">
   <img src="https://img.shields.io/badge/Language-HTML%20%7C%20CSS%20%7C%20JavaScript%20%7C%20AutoHotkey-orange">
-  <img src="https://img.shields.io/badge/Integration-HTTP%20API-lightgrey">
+  <img src="https://img.shields.io/badge/Integration-HTTP%20API-red">
   <img src="https://img.shields.io/badge/Interface-CRT%20%7C%20Retro-green">
 </p>
 
@@ -29,6 +29,44 @@ The dashboard runs directly in a web browser and consumes an <b>HTTP API</b> tha
 <p>
 The interface was built using <b>HTML, CSS and JavaScript</b>, without requiring a frontend framework.
 </p>
+
+---
+
+<h2>🧩 Adaptations</h2>
+
+<p>
+Besides running in a browser, SEVASTOLINK has two ready-to-use adaptations for <b>Windows</b>. <br>Pick the one that fits your setup:
+</p>
+
+<table align="center">
+  <tr>
+    <td align="center" width="50%" valign="top">
+      <br>
+      <img src="https://cdn.simpleicons.org/autohotkey/8b949e" height="48">
+      <h3>Screen Saver</h3>
+      <p>
+        Turns the dashboard into a <b>Windows screen saver</b>.<br>
+        Opens in fullscreen <b>Edge Kiosk Mode</b> and closes with any mouse or keyboard activity.
+      </p>
+      <a href="https://github.com/joaoandradegp-wq/Dashboard-Sevastolink/tree/Wallpaper_Engine/ScreenSaver">
+        <img src="https://img.shields.io/badge/Open-Screen%20Saver-1f6feb?style=for-the-badge">
+      </a>
+      <br><br>
+    </td>
+    <td align="center" width="50%" valign="top">
+      <br>
+      <img src="https://cdn.simpleicons.org/steam/8b949e" height="48">
+      <h3>Wallpaper Engine</h3>
+      <p>
+        Turns the dashboard into an <b>animated desktop wallpaper</b>.<br>
+        API URL and refresh interval can be changed in the Wallpaper Engine panel, with no code editing.
+      </p>
+      <a href="https://github.com/joaoandradegp-wq/Dashboard-Sevastolink/tree/Wallpaper_Engine/WallpaperEngine">
+        <img src="https://img.shields.io/badge/Open-Wallpaper%20Engine-1f6feb?style=for-the-badge">
+      </a>
+    </td>
+  </tr>
+</table>
 
 ---
 
@@ -168,7 +206,7 @@ The dashboard requires no frontend framework or additional web server.
 <h2>🖥 Quick Launch</h2>
 
 <p>
-The <b>web.bat</b> file provides a quick way to launch the dashboard directly in Microsoft Edge using Kiosk Mode.
+The <b>Kiosk_Mode.bat</b> file provides a quick way to launch the dashboard directly in Microsoft Edge using Kiosk Mode.
 </p>
 
 <pre>
@@ -181,27 +219,7 @@ Double-clicking the batch file opens the SEVASTOLINK dashboard without the stand
 </p>
 
 <p>
-The URL can be changed directly in the <b>web.bat</b> file when necessary.
-</p>
-
----
-
-<h2>🖥 Windows Screen Saver</h2>
-
-<p>
-The SEVASTOLINK dashboard can also be used as a Windows screen saver.
-</p>
-
-<p>
-The <b>SEVASTOLINK Screen Saver</b> uses <b>AutoHotkey v2</b> to launch the dashboard in fullscreen Kiosk Mode and monitor keyboard and mouse activity.
-</p>
-
-<p>
-When user interaction is detected, the Edge Kiosk process is closed and the screen saver exits.
-</p>
-
-<p>
-The screen saver is available in the <b>ScreenSaver</b> folder: <a href="./ScreenSaver/"><b>SEVASTOLINK Screen Saver</b></a>
+The URL can be changed directly in the <b>Kiosk_Mode.bat</b> file when necessary.
 </p>
 
 ---
@@ -218,7 +236,7 @@ const POLL_MS = 2000;
 </pre>
 
 <p>
-The URL used by the <b>web.bat</b> and <b>Sevastolink.ahk</b> files should point to the same SEVASTOLINK dashboard address.
+The URL used by the <b>Kiosk_Mode.bat</b> and <b>Sevastolink.ahk</b> files should point to the same SEVASTOLINK dashboard address.
 </p>
 
 ---
