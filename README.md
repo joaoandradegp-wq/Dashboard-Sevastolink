@@ -64,6 +64,7 @@ Besides running in a browser, SEVASTOLINK has two ready-to-use adaptations for <
       <a href="https://github.com/joaoandradegp-wq/Dashboard-Sevastolink/tree/main/WallpaperEngine">
         <img src="https://img.shields.io/badge/Open-Wallpaper%20Engine-1f6feb?style=for-the-badge">
       </a>
+      <br><br>
     </td>
   </tr>
 </table>
