@@ -25,10 +25,6 @@ This project turns the <b>SEVASTOLINK CRT Dashboard</b> into an animated desktop
 </p>
 
 <p>
-The wallpaper is a single HTML page that polls the SEVASTOLINK API and displays CPU, RAM, disk, swap, temperature, network speed and LAN IP in a CRT-style terminal.
-</p>
-
-<p>
 The API URL and the refresh interval can be changed directly in the <b>Wallpaper Engine</b> properties panel, with no need to edit any code.
 </p>
 
