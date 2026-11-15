@@ -1,0 +1,25 @@
+{
+  "file": "index.html",
+  "title": "SEVASTOLINK",
+  "type": "web",
+  "preview": "preview.png",
+  "general": {
+    "properties": {
+      "apiurl": {
+        "order": 0,
+        "text": "URL da API",
+        "type": "textinput",
+        "value": "http://server.yakalo-trout.ts.net:8181/api/rainmeter"
+      },
+      "pollms": {
+        "order": 1,
+        "text": "Intervalo de atualização (ms)",
+        "type": "slider",
+        "min": 500,
+        "max": 10000,
+        "step": 500,
+        "value": 2000
+      }
+    }
+  }
+}
