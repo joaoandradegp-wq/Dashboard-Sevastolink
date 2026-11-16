@@ -58,7 +58,7 @@ Besides running in a browser, SEVASTOLINK has two ready-to-use adaptations for <
       <img src="https://cdn.simpleicons.org/steam/8b949e" height="48">
       <h3>Wallpaper Engine</h3>
       <p>
-        Turns the dashboard into an <b>animated desktop wallpaper</b>.<br>
+        Turns the dashboard into an <b>animated wallpaper</b>.<br>
         API URL and refresh interval can be changed in the Wallpaper Engine panel, with no code editing.
       </p>
       <a href="https://github.com/joaoandradegp-wq/Dashboard-Sevastolink/tree/main/WallpaperEngine">
