@@ -1,25 +1,49 @@
 {
-  "file": "index.html",
-  "title": "SEVASTOLINK",
-  "type": "web",
-  "preview": "preview.png",
-  "general": {
-    "properties": {
-      "apiurl": {
-        "order": 0,
-        "text": "URL da API",
-        "type": "textinput",
-        "value": "http://server.yakalo-trout.ts.net:8181/api/rainmeter"
-      },
-      "pollms": {
-        "order": 1,
-        "text": "Intervalo de atualização (ms)",
-        "type": "slider",
-        "min": 500,
-        "max": 10000,
-        "step": 500,
-        "value": 2000
-      }
-    }
-  }
+	"contentrating" : "Everyone",
+	"description" : "Web-based server monitoring dashboard inspired by the computer terminals of Sevastopol Station from the Alien: Isolation universe.\r\n\r\n🔗 Github: \r\nhttps://github.com/joaoandradegp-wq/Dashboard-Sevastolink/tree/Wallpaper_Engine\r\n\r\n📊 Telemetry\r\nThe page reads plain text from the API, one KEY=VALUE per line:\r\n\r\nCPU_USAGE=12.5\r\nRAM_PERCENT=48.2\r\nDISK_PERCENT=63.0\r\nDISK_USED=210\r\nDISK_TOTAL=500\r\nSWAP_PERCENT=3.1\r\nCPU_TEMP=51.0\r\nLAN_IP=192.168.0.10\r\nDOWNLOAD=1.25\r\nUPLOAD=0.30\r\n\r\nBars and values change color (normal, warning, critical) according to the load, and the status pill shows ONLINE or LINK LOST depending on the connection.\r\n\r\n",
+	"file" : "index.html",
+	"general" : 
+	{
+		"properties" : 
+		{
+			"apiurl" : 
+			{
+				"index" : 0,
+				"order" : 100,
+				"text" : "URL da API",
+				"type" : "textinput",
+				"value" : "http://server.yakalo-trout.ts.net:8181/api/rainmeter"
+			},
+			"pollms" : 
+			{
+				"index" : 1,
+				"max" : 10000,
+				"min" : 500,
+				"order" : 101,
+				"step" : 500,
+				"text" : "Intervalo de atualização (ms)",
+				"type" : "slider",
+				"value" : 2000
+			},
+			"schemecolor" : 
+			{
+				"order" : 0,
+				"text" : "ui_browse_properties_scheme_color",
+				"type" : "color",
+				"value" : "0 0 0"
+			}
+		}
+	},
+	"preview" : "preview.jpg",
+	"ratingsex" : "none",
+	"ratingviolence" : "none",
+	"snapshotformat" : -1,
+	"snapshotoverlay" : "",
+	"tags" : [ "Game" ],
+	"title" : "SEVASTOLINK: A Real Server Dashboard",
+	"type" : "web",
+	"version" : 3,
+	"visibility" : "public",
+	"workshopid" : "3840473555",
+	"workshopurl" : "steam://url/CommunityFilePage/3840473555"
 }
